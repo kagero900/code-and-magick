@@ -9,6 +9,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.font = '16px PT Mono';
 
   ctx.fillText('Ура, вы победили!', 160, 35);
+  ctx.fillText('Список результатов:', 160, 55);
 
   var max = -1; //why -1?
   var maxIndex = -1;
@@ -26,21 +27,23 @@ window.renderStatistics = function (ctx, names, times) {
   var barWidth = 40; //px;
   var indent = 90; //px;
   var initialX = 160; //px;
-  var initialY = 230; //px;
-  var lineHeight = 30; //px;
+  var initialY = 240; //px;
+  var lineHeight = 25; //px;
 
 
 
-  ctx.fillText('Худшее время: ' + Math.round(max) + ' мс у игрока ' +
-    names[maxIndex], 120, 60);
+  //ctx.fillText('Худшее время: ' + Math.round(max) + ' мс у игрока ' +
+    //names[maxIndex], 120, 60);
 
   for(var i = 0; i < times.length; i++) {
 
-    var color = 'rgba(0, 0, 255, ' + Math.random().toFixed(2) + ')';
+    var color = 'rgba(0, 0, 255, ' + Math.random().toFixed(2) + ')';//кроме 0!!! ток хз как
+    var time = Math.round(times[i]);
 
     names[i] == 'Вы' ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = color;
     ctx.fillRect(initialX + indent * i, initialY, barWidth, -(times[i] * step));
     ctx.fillStyle = '#000';
+    ctx.fillText(time, initialX + indent * i, initialY - (times[i] * step) - lineHeight / 2);
     ctx.fillText(names[i], initialX + indent * i, initialY + lineHeight);
   }
 };
