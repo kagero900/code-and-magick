@@ -19,7 +19,13 @@ var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var names=[];
 
-var getRandomCoatColor = function () {
+var getRandomElement = function(arr) {
+	return Math.floor(Math.random() * arr.length);
+}
+
+var randCoatColor = getRandomElement(coatColor);
+var randEyesColor = getRandomElement(eyesColor);
+/*var getRandomCoatColor = function () {
   var randCoatColor = coatColor[Math.floor(Math.random() * coatColor.length)];
   return randCoatColor;
 };
@@ -27,12 +33,12 @@ var getRandomCoatColor = function () {
 var getRandomEyesColor = function () {
   var randEyesColor = eyesColor[Math.floor(Math.random() * eyesColor.length)];
   return randEyesColor;
-};
+};*/
 
 var getNameOfWizard = function() {
 
   for (var i = 0; i < namesOfWizards.length; i++) {
-    names[i]= namesOfWizards[i] + ' ' + surnamesOfWizards[i];
+    names[i]= namesOfWizards[getRandomElement(namesOfWizards)] + ' ' + surnamesOfWizards[getRandomElement(surnamesOfWizards)];
     names.concat(names[i]);
   }
   return names;
@@ -43,43 +49,59 @@ var WIZARD_NAMES = getNameOfWizard();
 var wizards = [
   {
     name: WIZARD_NAMES[0],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   },
   {
     name: WIZARD_NAMES[1],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   },
   {
     name: WIZARD_NAMES[2],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   },
   {
     name: WIZARD_NAMES[3],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   },
   {
     name: WIZARD_NAMES[4],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   },
   {
     name: WIZARD_NAMES[5],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   },
   {
     name: WIZARD_NAMES[6],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   },
   {
     name: WIZARD_NAMES[7],
-    coatColor: getRandomCoatColor(),
-    eyesColor: getRandomEyesColor()
+    coatColor: randCoatColor,
+    eyesColor: randEyesColor
+    //coatColor: getRandomCoatColor(),
+    //eyesColor: getRandomEyesColor()
   }
 ];
 
